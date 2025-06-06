@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,13 @@ Route::group(['middleware' => 'auth:user'], function () {
         Route::get('/berita/ubah/{id}',[BeritaController::class, 'ubah'])->name('berita.ubah');
         Route::post('/berita/prosesUbah/{id}',[BeritaController::class, 'prosesUbah'])->name('berita.prosesUbah');
         Route::get('/berita/hapus/{id}',[BeritaController::class, 'hapus'])->name('berita.hapus');
+
+        Route::get('/user',[UserController::class, 'index'])->name('user.index');
+        Route::get('/user/tambah',[UserController::class, 'tambah'])->name('user.tambah');
+        Route::post('/user/prosesTambah',[UserController::class, 'prosesTambah'])->name('user.prosesTambah');
+        Route::get('/user/ubah/{id}',[UserController::class, 'ubah'])->name('user.ubah');
+        Route::post('/user/prosesUbah/{id}',[UserController::class, 'prosesUbah'])->name('user.prosesUbah');
+        Route::get('/user/hapus/{id}',[UserController::class, 'hapus'])->name('user.hapus');
     });
 
     Route::get('/logout',[\App\Http\Controllers\AuthController::class,'logout'])->name('auth.logout');
