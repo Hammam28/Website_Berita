@@ -147,11 +147,11 @@
             </div>
 
             <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
+{{--            <div class="sidebar-card d-none d-lg-flex">--}}
+{{--                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">--}}
+{{--                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>--}}
+{{--                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>--}}
+{{--            </div>--}}
 
         </ul>
         <!-- End of Sidebar -->
@@ -429,18 +429,28 @@
     <script src="{{asset('assets/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('assets/js/demo/chart-pie-demo.js')}}"></script>
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+{{--    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>--}}
+
+    <script src="{{asset('assets/js/ckeditor/build/ckeditor.js')}}"></script>
 
     <script>
         ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .then(editor => {
-            console.log( editor );
-        })
-        .catch( error => {
-            console.error( error );
-        });
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
     </script>
+
+{{--    <script>--}}
+{{--        ClassicEditor--}}
+{{--        .create( document.querySelector( '#editor' ) )--}}
+{{--        .then(editor => {--}}
+{{--            console.log( editor );--}}
+{{--        })--}}
+{{--        .catch( error => {--}}
+{{--            console.error( error );--}}
+{{--        });--}}
+{{--    </script>--}}
 
     <script>
         function tampilkanPreview(gambar,idpreview){
