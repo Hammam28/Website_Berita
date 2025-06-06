@@ -27,14 +27,30 @@
                         @enderror
                     </div>
 
+{{--                    <div class="mb-3">--}}
+{{--                        <label class="form-label">Foto Berita</label>--}}
+{{--                        <input type="file" name="gambar_berita" class="form-control @error('gambar_berita') is-invalid @enderror"--}}
+{{--                               accept="image/*" onchange="tampilkanPreview(this,'tampilFoto')">--}}
+{{--                        @error('gambar_berita')--}}
+{{--                        <span style="color: darkred; font-weight: 600; font-size: 9pt">{{$message}}</span>--}}
+{{--                        @enderror--}}
+{{--                        <img id="tampilFoto"--}}
+{{--                             onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930';"--}}
+{{--                             src="" alt="" width="15%">--}}
+{{--                    </div>--}}
+
                     <div class="mb-3">
                         <label class="form-label">Foto Berita</label>
                         <input type="file" name="gambar_berita" class="form-control @error('gambar_berita') is-invalid @enderror"
                                accept="image/*" onchange="tampilkanPreview(this,'tampilFoto')">
-                        @error('judul_berita')
+                        @error('gambar_berita')
                         <span style="color: darkred; font-weight: 600; font-size: 9pt">{{$message}}</span>
                         @enderror
-                        <img id="tampilFoto" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930';" src="" alt="" width="15%">
+                        <img id="tampilFoto"
+                             onerror="this.onerror=null;this.src='{{ asset('storage/No_Image_Available.jpg') }}';"
+                             src="{{ asset('storage/No_Image_Available.jpg') }}"
+                             alt="Preview"
+                             width="15%">
                     </div>
 
                     <div class="mb-3">
