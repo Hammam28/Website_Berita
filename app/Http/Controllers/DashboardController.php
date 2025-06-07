@@ -5,16 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Kategori;
+use App\Models\Berita;
 use Hash;
 
 class DashboardController extends Controller
 {
     public function index(){
-        return view('backend.content.dashboard');
+        $totalBerita = Berita::count();
+        $totalKategori = Kategori::count();
+        $totalUser = User::count();
+//        dd($totalBerita, $totalKategori, $totalUser);
+        return view('backend.content.dashboard', compact('totalBerita', 'totalKategori', 'totalUser'));
     }
 
     public function profile(){
-         return view('backend.content.profile');
+        $id = Auth::guard('user')->user()->id;
+        $user = User::findOrFail($id);
+         return view('backend.content.profile', compact('user'));
     }
 
     public function resetPassword(){
