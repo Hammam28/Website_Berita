@@ -15,8 +15,9 @@ class DashboardController extends Controller
         $totalBerita = Berita::count();
         $totalKategori = Kategori::count();
         $totalUser = User::count();
-//        dd($totalBerita, $totalKategori, $totalUser);
-        return view('backend.content.dashboard', compact('totalBerita', 'totalKategori', 'totalUser'));
+
+        $latestBerita = Berita::with('kategori')->latest()->get()->take(5);
+        return view('backend.content.dashboard', compact('totalBerita', 'totalKategori', 'totalUser', 'latestBerita'));
     }
 
     public function profile(){

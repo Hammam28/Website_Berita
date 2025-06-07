@@ -24,6 +24,10 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
 </head>
 
 <body id="page-top">
@@ -77,6 +81,18 @@
                 <a class="nav-link" href="{{route('user.index')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data User</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('page.index')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Data Page</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('menu.index')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Data Menu</span></a>
             </li>
 
             <!-- Divider -->
@@ -345,9 +361,6 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{asset('assets/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="{{asset('assets/vendor/jquery-easing/jquery.easing.min.js')}}"></script>

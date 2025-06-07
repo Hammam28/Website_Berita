@@ -5,6 +5,8 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +54,22 @@ Route::group(['middleware' => 'auth:user'], function () {
         Route::get('/user/ubah/{id}',[UserController::class, 'ubah'])->name('user.ubah');
         Route::post('/user/prosesUbah/{id}',[UserController::class, 'prosesUbah'])->name('user.prosesUbah');
         Route::get('/user/hapus/{id}',[UserController::class, 'hapus'])->name('user.hapus');
+
+        Route::get('/page',[PageController::class, 'index'])->name('page.index');
+        Route::get('/page/tambah',[PageController::class, 'tambah'])->name('page.tambah');
+        Route::post('/page/prosesTambah',[PageController::class, 'prosesTambah'])->name('page.prosesTambah');
+        Route::get('/page/ubah/{id}',[PageController::class, 'ubah'])->name('page.ubah');
+        Route::post('/page/prosesUbah/{id}',[PageController::class, 'prosesUbah'])->name('page.prosesUbah');
+        Route::get('/page/hapus/{id}',[PageController::class, 'hapus'])->name('page.hapus');
+
+        Route::get('/menu',[MenuController::class, 'index'])->name('menu.index');
+        Route::get('/menu/tambah',[MenuController::class, 'tambah'])->name('menu.tambah');
+        Route::post('/menu/prosesTambah',[MenuController::class, 'prosesTambah'])->name('menu.prosesTambah');
+        Route::get('/menu/ubah/{id}',[MenuController::class, 'ubah'])->name('menu.ubah');
+        Route::post('/menu/prosesUbah/{id}',[MenuController::class, 'prosesUbah'])->name('menu.prosesUbah');
+        Route::get('/menu/hapus/{id}',[MenuController::class, 'hapus'])->name('menu.hapus');
+        Route::get('/menu/order/{idMenu}/{idSwap}',[MenuController::class, 'order'])->name('menu.order');
+
     });
 
     Route::get('/logout',[\App\Http\Controllers\AuthController::class,'logout'])->name('auth.logout');
