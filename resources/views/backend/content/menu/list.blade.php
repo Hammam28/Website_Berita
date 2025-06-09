@@ -38,10 +38,8 @@
                                         @foreach($row->submenu as $key => $sub)
                                             <li>
                                                 {{$sub->nama_menu}}
-
-                                                <a href="{{ route('menu.ubah', $row->id_menu) }}"><i class="fa fa-edit"></i></a>
-                                                <a href="{{ route('menu.hapus', $row->id_menu) }}"><i class="fa fa-trash"></i></a>
-
+                                                <a href="{{ route('menu.ubah', $sub->id_menu) }}"><i class="fa fa-edit"></i></a>
+                                                <a href="{{ route('menu.hapus', $sub->id_menu) }}"><i class="fa fa-trash"></i></a>
                                                 <span>{{($sub->status_menu == 0) ? "(tidak Aktif)" : ""}}</span>
                                             </li>
                                         @endforeach
