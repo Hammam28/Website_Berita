@@ -89,9 +89,11 @@
                                         <table class="table table-bordered">
                                             <thead>
                                             <tr>
+                                                <th>ID Berita</th>
                                                 <th>Gambar Berita</th>
                                                 <th>Judul Berita</th>
                                                 <th>Kategori Berita</th>
+                                                <th>Total Views</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -100,9 +102,11 @@
                                             @endphp
                                             @foreach($latestBerita as $row)
                                                 <tr>
+                                                    <td>{{$row->id_berita}}</td>
                                                     <td><img src="{{ asset('storage/berita/' . $row->gambar_berita) }}" width="10%"></td>
                                                     <td>{{$row->judul_berita}}</td>
                                                     <td>{{$row->kategori->nama_kategori}}</td>
+                                                    <td>{{$row->total_views}}x</td>
                                                 </tr>
                                             @endforeach
                                             </tbody>
