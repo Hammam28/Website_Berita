@@ -43,13 +43,6 @@
                         </div>
                     </div>
                 @endforeach
-
-            </div>
-            <div class="text-end mb-5 mb-xl-0">
-                <a class="text-decoration-none" href="{{route('home.berita')}}">
-                    More stories
-                    <i class="bi bi-arrow-right"></i>
-                </a>
             </div>
         </div>
     </section>
