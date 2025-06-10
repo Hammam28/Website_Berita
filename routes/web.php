@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserKategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name('hom
 Route::get('/berita/{id}',[\App\Http\Controllers\HomeController::class,'detailBerita'])->name('home.detailBerita');
 Route::get('/page/{id}',[\App\Http\Controllers\HomeController::class,'detailPage'])->name('home.detailPage');
 Route::get('/berita',[\App\Http\Controllers\HomeController::class,'semuaBerita'])->name('home.berita');
+
+Route::get('/kategori/{slug}', [UserKategoriController::class, 'show'])->name('kategori.show');
+
 
 Route::get('/login',[\App\Http\Controllers\AuthController::class,'index'])->name('auth.index')->middleware('guest');
 Route::post('/login',[\App\Http\Controllers\AuthController::class,'verify'])->name('auth.verify');

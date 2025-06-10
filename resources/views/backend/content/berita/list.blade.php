@@ -22,6 +22,7 @@
                      <thead>
                          <tr>
                              <th>No</th>
+                             <th>Total Views</th>
                              <th>Gambar Berita</th>
                              <th>Judul Berita</th>
                              <th>Kategori</th>
@@ -33,6 +34,7 @@
                         @foreach($berita as $row)
                             <tr>
                                 <td>{{$no++}}</td>
+                                <td>{{$row->total_views}}x</td>
                                 <td><img src="{{ asset('storage/berita/' . $row->gambar_berita) }}" width="10%">
                                 </td>
                                 <td>{{$row->judul_berita}}</td>

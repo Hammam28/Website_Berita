@@ -17,6 +17,8 @@ class DashboardController extends Controller
         $totalUser = User::count();
 
         $latestBerita = Berita::with('kategori')->latest()->get()->take(5);
+
+        $user = Auth::guard('user')->user();
         return view('backend.content.dashboard', compact('totalBerita', 'totalKategori', 'totalUser', 'latestBerita'));
     }
 
