@@ -6,14 +6,15 @@
             <h2 class="fw-bolder fs-5 mb-4">Semua Berita</h2>
             <div class="row gx-5">
 
-
                 @foreach($berita as $row)
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="card h-100 shadow border-0">
-                            <img class="card-img-top"
-                                 src="{{ asset('storage/berita/' . $row->gambar_berita) }}"
-                                 alt="{{ $row->judul_berita }}"
-                                 onerror="this.onerror=null;this.src='{{ asset('assets-fe/assets/img/default.jpg') }}';" />
+                    <div class="col-md-6 col-lg-3 mb-5">
+                        <div class="card h-100 shadow border-0 berita-card">
+                            <div class="berita-img-wrapper">
+                                <img class="card-img-top"
+                                     src="{{ asset('storage/berita/' . $row->gambar_berita) }}"
+                                     alt="{{ $row->judul_berita }}"
+                                     onerror="this.onerror=null;this.src='{{ asset('assets-fe/assets/img/default.jpg') }}';" />
+                            </div>
 
                             <div class="card-body p-4">
                                 <div class="badge bg-primary bg-gradient rounded-pill mb-2">

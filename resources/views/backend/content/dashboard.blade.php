@@ -103,7 +103,7 @@
                                             @foreach($latestBerita as $row)
                                                 <tr>
                                                     <td>{{$row->id_berita}}</td>
-                                                    <td><img src="{{ asset('storage/berita/' . $row->gambar_berita) }}" width="10%"></td>
+                                                    <td><img src="{{ asset('storage/berita/' . $row->gambar_berita) }}" width="25%"></td>
                                                     <td>{{$row->judul_berita}}</td>
                                                     <td>{{$row->kategori->nama_kategori}}</td>
                                                     <td>{{$row->total_views}}x</td>

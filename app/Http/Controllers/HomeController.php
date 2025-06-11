@@ -13,8 +13,8 @@ class HomeController extends Controller
     public function index(){
         //halaman awal
         $menu = $this->getMenu();
-        $berita = Berita::with('kategori')->latest()->get()->take(6);
-        $mostViews = Berita::with('kategori')->orderByDesc('total_views')->get()->take(3);
+        $berita = Berita::with('kategori')->latest()->get()->take(12);
+        $mostViews = Berita::with('kategori')->orderByDesc('total_views')->get()->take(6);
         return view('frontend.content.home', compact('menu', 'berita', 'mostViews'));
     }
 

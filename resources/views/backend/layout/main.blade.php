@@ -112,7 +112,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 fix-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -134,7 +134,7 @@
 {{--                    </form>--}}
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto s">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
@@ -265,17 +265,6 @@
                 console.error(error);
             });
     </script>
-
-{{--    <script>--}}
-{{--        ClassicEditor--}}
-{{--        .create( document.querySelector( '#editor' ) )--}}
-{{--        .then(editor => {--}}
-{{--            console.log( editor );--}}
-{{--        })--}}
-{{--        .catch( error => {--}}
-{{--            console.error( error );--}}
-{{--        });--}}
-{{--    </script>--}}
 
     <script>
         function tampilkanPreview(gambar,idpreview){
