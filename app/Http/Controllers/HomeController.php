@@ -36,14 +36,6 @@ class HomeController extends Controller
         return view('frontend.content.detailPage', compact('menu', 'page'));
     }
 
-//    public function semuaBerita(){
-//        //semua berita
-//        $menu = $this->getMenu();
-//        $berita = Berita::with('kategori')->latest()->get();
-//        return view('frontend.content.semuaBerita', compact('menu', 'berita'));
-//
-//    }
-
     public function semuaBerita(Request $request)
     {
         $menu = $this->getMenu();
