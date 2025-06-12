@@ -14,6 +14,8 @@
     <link href="{{asset('assets-fe/css/styles.css')}}" rel="stylesheet"/>
 
 </head>
+@stack('scripts')
+
 <body class="d-flex flex-column min-vh-100">
 <main class="flex-grow-1">
     <!-- Navigation-->

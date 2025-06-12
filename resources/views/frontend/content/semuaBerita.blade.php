@@ -3,10 +3,17 @@
     <!-- Blog preview section-->
     <section class="py-5">
         <div class="container px-5">
-            <h2 class="fw-bolder fs-5 mb-4">Semua Berita</h2>
+            <h2 class="fw-bolder fs-4 mb-4">Semua Berita</h2>
             <div class="row gx-5">
 
-                @foreach($berita as $row)
+                <form method="GET" action="{{ route('home.berita') }}" class="mb-4">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Cari berita..." value="{{ request('search') }}">
+                        <button class="btn btn-primary" type="submit">Cari</button>
+                    </div>
+                </form>
+
+            @foreach($berita as $row)
                     <div class="col-md-6 col-lg-3 mb-5">
                         <div class="card h-100 shadow border-0 berita-card">
                             <div class="berita-img-wrapper">

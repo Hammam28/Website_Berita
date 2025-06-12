@@ -5,6 +5,14 @@
         <div class="container px-5">
             <h2 class="fw-bolder fs-4 mb-4">Berita {{ $kategori->nama_kategori }}</h2>
 
+            <!-- Fitur Pencarian Berita -->
+            <form method="GET" action="{{ route('kategori.show', $kategori->slug) }}" class="mb-4">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Cari berita..." value="{{ request('q') }}">
+                    <button class="btn btn-primary" type="submit">Cari</button>
+                </div>
+            </form>
+
             @if($berita->count() > 0)
                 <div class="row gx-5">
                     @foreach($berita as $row)

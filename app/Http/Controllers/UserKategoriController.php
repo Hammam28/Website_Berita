@@ -10,9 +10,26 @@ use App\Models\Berita;
 class UserKategoriController extends Controller
 {
     //
-    public function show($slug){
+//    public function show($slug){
+//        $kategori = Kategori::where('slug', $slug)->firstOrFail();
+//        $berita = Berita::where('id_kategori', $kategori->id_kategori)->latest()->paginate(10);
+//
+//        $menu = $this->getMenu();
+//
+//        return view('frontend.kategori.show', compact('kategori', 'berita', 'menu'));
+//    }
+
+    public function show(Request $request, $slug)
+    {
         $kategori = Kategori::where('slug', $slug)->firstOrFail();
-        $berita = Berita::where('id_kategori', $kategori->id_kategori)->latest()->paginate(10);
+
+        $query = Berita::where('id_kategori', $kategori->id_kategori);
+
+        if ($request->has('q') && $request->q != '') {
+            $query->where('judul_berita', 'like', '%' . $request->q . '%');
+        }
+
+        $berita = $query->latest()->paginate(10)->withQueryString(); // penting untuk pagination tetap bawa query
 
         $menu = $this->getMenu();
 

@@ -5,9 +5,9 @@
     <div class="container px-5">
         <div class="row gx-5">
             <div class="col-xl-12 custom-carousel-container">
-                <h2 class="fw-bolder fs-5 mb-4">Most Views</h2>
+                <h2 class="fw-bolder fs-5 mb-4">Paling Banyak Dilihat</h2>
 
-                <div id="mostViewsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div id="mostViewsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
                     <div class="carousel-inner">
                         @foreach($mostViews as $index => $mv)
                             <div class="carousel-item @if($index === 0) active @endif">

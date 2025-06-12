@@ -36,13 +36,29 @@ class HomeController extends Controller
         return view('frontend.content.detailPage', compact('menu', 'page'));
     }
 
-    public function semuaBerita(){
-        //semua berita
-        $menu = $this->getMenu();
-        $berita = Berita::with('kategori')->latest()->get();
-        return view('frontend.content.semuaBerita', compact('menu', 'berita'));
+//    public function semuaBerita(){
+//        //semua berita
+//        $menu = $this->getMenu();
+//        $berita = Berita::with('kategori')->latest()->get();
+//        return view('frontend.content.semuaBerita', compact('menu', 'berita'));
+//
+//    }
 
+    public function semuaBerita(Request $request)
+    {
+        $menu = $this->getMenu();
+
+        $query = Berita::with('kategori')->latest();
+
+        if ($request->has('search') && $request->search != '') {
+            $query->where('judul_berita', 'like', '%' . $request->search . '%');
+        }
+
+        $berita = $query->get();
+
+        return view('frontend.content.semuaBerita', compact('menu', 'berita'));
     }
+
 
     private function getMenu(){
         //
