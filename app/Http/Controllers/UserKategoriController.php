@@ -29,7 +29,7 @@ class UserKategoriController extends Controller
             $query->where('judul_berita', 'like', '%' . $request->q . '%');
         }
 
-        $berita = $query->latest()->paginate(10)->withQueryString(); // penting untuk pagination tetap bawa query
+        $berita = $query->latest()->paginate(8)->withQueryString();
 
         $menu = $this->getMenu();
 

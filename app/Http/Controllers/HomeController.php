@@ -46,7 +46,8 @@ class HomeController extends Controller
             $query->where('judul_berita', 'like', '%' . $request->search . '%');
         }
 
-        $berita = $query->get();
+        // Ganti get() dengan paginate dan tambahkan appends supaya search tetap terikut saat pindah halaman
+        $berita = $query->paginate(20)->appends($request->all());
 
         return view('frontend.content.semuaBerita', compact('menu', 'berita'));
     }

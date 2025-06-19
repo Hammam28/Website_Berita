@@ -13,6 +13,10 @@
                 </div>
             </form>
 
+            <div class="d-flex justify-content-end mt-4">
+                {{ $berita->onEachSide(1)->links('pagination::bootstrap-5') }}
+            </div>
+
             @if($berita->count() > 0)
                 <div class="row gx-5">
                     @foreach($berita as $row)
@@ -57,20 +61,20 @@
 
                 <!-- Pagination -->
                 <div class="mt-4 d-flex justify-content-end">
-                    {{ $berita->links() }}
+                    {{ $berita->onEachSide(1)->links('pagination::bootstrap-5') }}
                 </div>
             @else
-                <p class="text-muted">Tidak ada berita di kategori ini.</p>
+                <div class="alert alert-warning text-center mt-4" role="alert">
+                    Tidak ada berita di kategori ini{{ request('q') ? ' yang cocok dengan pencarian.' : '.' }}
+                </div>
             @endif
 
             <div class="text-end mb-5 mb-xl-0">
                 <a class="text-decoration-none" href="{{ route('home.berita') }}">
-                    Semua berita
-                    <i class="bi bi-arrow-right"></i>
+                    Semua berita <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
         </div>
     </section>
-
 
 @endsection
